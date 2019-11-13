@@ -5,7 +5,13 @@
     --secondary_color: #546EFD;
 }
 
-/*RESET*/
+/* HEADER */
+
+.mdl-layout__header-row {
+    background-color: #673ab7;
+}
+
+/* RESET */
 
 * {
     margin: 0;
