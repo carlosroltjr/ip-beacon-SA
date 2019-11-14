@@ -1,0 +1,129 @@
+
+INSERT INTO usuarios (nome, localizacao, nivel, telefone, datacadastro) VALUES 
+    ('Zé', ST_GeomFromText('Point(1 1)'), 'Medio', '99880077', ('2019-02-22'))
+    ,('Gabriel', ST_GeomFromText('Point(3 22)'), 'Iniciante', '99778877', ('2019-10-21'))
+    ,('Maria', ST_GeomFromText('Point(22 44)'), 'Avançado', '88664422', ('2018-03-07'))
+    ,('Carlos', ST_GeomFromText('Point(2 3)'), 'Medio', '77879723', ('2019-03-07'))
+    ,('Manoel', ST_GeomFromText('Point(5 7)'), 'Avançado', '88889900', ('2019-12-25'))
+    ,('Joseph', ST_GeomFromText('Point(7 5)'), 'Iniciante', '98782312', ('2019-01-07'))
+    ,('Mario', ST_GeomFromText('Point(8 44)'), 'Medio', '88776655', ('2019-01-23'));
+
+
+INSERT INTO endereco (rua, num, bairro, cep, iduser) VALUES
+    ('Rua 1', '78', 'Gaivotas', '98214-059', 1)
+    ,('Rua 2', '55', 'Centro', '88662-021', 2)
+    ,('Rua 3', '345678', 'Lamim', '77666-600', 3)
+    ,('Rua 4', '2','Limoeiro','88030-999', 4)
+    ,('Rua 5', 'S/N','Saco Grande','99090-800', 5)
+    ,('Rua -1', '-2','Bairro Inverso','80004-050', 6)
+    ,('Rua Doida', '666','Bairro Legal','88012-050', 7);
+
+INSERT INTO hobbies (descricao, iduser) VALUES
+    ('Magic', 1)
+    ,('Commander', 2)
+    ,('Ping-Pong', 3)
+    ,('Yu-Gi-Oh', 4)
+    ,('Pokemon', 5)
+    ,('Jenga', 6)
+    ,('Dixit', 2)
+    ,('7 Wonders', 4);
+
+INSERT INTO matches (cod, iduser) VALUES
+    (1, 1)
+    ,(1, 7)
+    ,(1, 6)
+    ,(2, 4)
+    ,(2, 5)
+    ,(3, 1)
+    ,(3, 3)
+    ,(4, 4)
+    ,(4, 6)
+    ,(4, 1)
+    ,(4, 2)
+    ,(5, 3)
+    ,(5, 6)
+    ,(6, 4)
+    ,(6, 5)
+    ,(7, 1)
+    ,(7, 3)
+    ,(8, 4)
+    ,(8, 7)
+    ,(8, 1)
+    ,(8, 2);
+
+
+/*Alteração:*/
+UPDATE endereco SET rua =  'Rua 2' WHERE iduser = 6;
+
+UPDATE usuarios SET telefone = '80000422' WHERE idUser = 1;
+
+UPDATE hobbies SET descricao = 'Magic Commander' WHERE descricao = 'Commander';
+
+UPDATE matches SET cod = 7 WHERE cod = 8 AND idUser = 2;
+
+/*Exclusão:*/
+DELETE FROM hobbies WHERE iduser = 3 AND descricao LIKE 'Ping-Pong';
+
+DELETE FROM usuarios WHERE idUser = 7;
+
+DELETE FROM endereco WHERE idUser = 7;
+
+DELETE FROM matches WHERE idUser = 7 AND cod = 1;
+
+/*Quantas partidas ocorreram?*/
+SELECT descricao, cod FROM usuarios, matches, hobbies WHERE
+matches.iduser = usuarios.iduser AND usuarios.iduser = hobbies.iduser group by cod ORDER BY cod ASC;
++-----------+-----+
+| descricao | cod |
++-----------+-----+
+| Magic     |   1 |
+| Yu-Gi-Oh  |   2 |
+| Magic     |   3 |
+| Magic     |   4 |
+| Ping-Pong |   5 |
+| Yu-Gi-Oh  |   6 |
+| Magic     |   7 |
+| Magic     |   8 |
++-----------+-----+
+8 rows in set (0.00 sec)
+
+/*Quantas pessoas moram na rua 2?*/
+SELECT count(rua) FROM usuarios, endereco WHERE rua LIKE 'rua 2' AND usuarios.iduser = endereco.iduser;
++------------+
+| count(rua) |
++------------+
+|          1 |
++------------+
+1 row in set (0.00 sec)
+
+/*Quantas partidas foram do hobby Magic?*/
+SELECT count(matches.cod) AS Magic FROM  usuarios, hobbies, matches WHERE descricao LIKE 'Magic' AND matches.iduser = usuarios.iduser AND usuarios.iduser = hobbies.iduser;
++-------+
+| Magic |
++-------+
+|     5 |
++-------+
+1 row in set (0.00 sec)
+
+/*Qual o usuário mais antigo?*/
+SELECT nome, datacadastro FROM usuarios ORDER BY datacadastro ASC LIMIT 1;
++-------+--------------+
+| nome  | datacadastro |
++-------+--------------+
+| Maria | 2018-03-07   |
++-------+--------------+
+1 row in set (0.00 sec)
+
+/*Quais pessoas tem mais que 3 caracteres no nome?*/
+SELECT nome FROM usuarios WHERE nome LIKE '___%';
++---------+
+| nome    |
++---------+
+| Gabriel |
+| Maria   |
+| Carlos  |
+| Manoel  |
+| Joseph  |
+| Mario   |
++---------+
+6 rows in set (0.00 sec)
