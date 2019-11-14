@@ -6,8 +6,8 @@ module.exports = () => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'user',
-            pass: 'pass'
+            user: 'ip.beacon.sa@gmail.com',
+            pass: 'ipbeacon01'
         }
     });
 
