@@ -474,7 +474,7 @@
         appShowDialog({
             element: dialog,
             title: 'Ajuda',
-            message: 'Na aba MAPA você pode visualizar os locais em que os animais foram cadastrados, adicionar filtros para visualizações específicas, visualizar os locais de maior e menor ocorrência de animais em situação de risco e visualizar um resumo das informações do animal.\nNa aba LISTA você pode visualizar todos os animais cadastrados em nosso banco de dados e informações gerais sobre os mesmos.\nNa aba ADICIONAR você pode cadastrar um novo animal em situação de risco.',
+            message: 'Na aba MAPA você pode vizualizar informações sobre os jogadores perto de você e adicionar filtros para melhorar sua busca pelo jogo desejado.\nNa aba LISTA você pode visualizar todos os hobbies cadastrados em nosso banco de dados e informações gerais sobre os mesmos.\nNa aba ADICIONAR você pode cadastrar um novo hobby.',
             btn_ok() { appHideDialog(dialog); }
         });
     });
@@ -712,7 +712,7 @@
         appShowDialog({
             element: dialog,
             title: 'Créditos',
-            message: 'Esta Aplicação foi desenvolvida como trabalho de conclusão do curso superior de tecnologia em geoprocessamento, da faculdade de tecnologia de Jacareí - FATEC Jacareí.\nA aplicação é um piloto para as cidades de Jacareí e São José dos Campos e tem como tema o "Desenvolvimento de uma aplicação para auxiliar a identificação e localização de animais em situação de risco".\nO trabalho foi orientado por Clóvis Lemos Tavares e têm como autores Ana Carolina Pereira e Diego dos Santos Rodrigues.',
+            message: 'Esta Aplicação foi desenvolvida como Situação de "Aprendizado" do curso técnico em desenvolvimento de sistemas, do Senai.\nA aplicação traz a ideia de fortalecer a comunidade geek de Florianópolis, possibilitando que pessoas, que gostem do mesmo cardgame ou boardgame, entrem em contato para se divertir e ter uma boa partida do seu hobby favorito.\nO trabalho foi orientado por Clóvis Lemos Tavares e têm como "autores" Carlos e Guilherme.',
             btn_ok() { appHideDialog(dialog); }
         });
     });
