@@ -76,11 +76,11 @@
 
                             template = `Nome: ${data.respTemplate.nickname}<br><br>
                             Tipo: ${data.respTemplate.type}<br><br>
-                            Cores: ${data.respTemplate.color}<br><br>
+                            Número de jogadores: ${data.respTemplate.color}<br><br>
                             Data de Cadastro:  ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}<br><br>
-                            Parece estar machucado: ${data.respTemplate.injured ? 'Sim' : 'Não'}<br><br>
-                            Parece estar doente: ${data.respTemplate.sick ? 'Sim' : 'Não'}<br><br>
-                            Parece estar mal alimentado: ${data.respTemplate.fed ? 'Sim' : 'Não'}<br><br>
+                            Semanal? ${data.respTemplate.injured ? 'Sim' : 'Não'}<br><br>
+                            Cooperativo? ${data.respTemplate.sick ? 'Sim' : 'Não'}<br><br>
+                            Bom para iniciantes? ${data.respTemplate.fed ? 'Sim' : 'Não'}<br><br>
                             Localização: ${data.respTemplate.address}<br>${data.respTemplate.coordinates}<br><br>
                             Descrição: ${data.respTemplate.description}`;
 
