@@ -277,7 +277,7 @@ module.exports = () => {
                     // INSERT QUERY => CREATE A NEW USER
                     client.query(`INSERT INTO pets (user_id, pet_nickname, pet_type, pet_color, pet_injured, pet_sick, pet_fed, pet_description, pet_address, pet_coordinates, geom, pet_date, pet_picture, pet_status) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, ST_GeomFromText('Point(${latLng})',4326), NOW(), $11, $12)`, [jsonData.userId, jsonData.nickname, jsonData.type, jsonData.color, jsonData.injured, jsonData.sick, jsonData.fed, jsonData.description, jsonData.address, jsonData.coordinates, jsonData.picture, jsonData.status])
                         // ON SUCCESS => RESPONSE OK 200
-                        .then(() => res.status(200).json({ title: 'Obrigado por ajudar', message: 'O animal foi cadastrado com sucesso.' }))
+                        .then(() => res.status(200).json({ title: 'Obrigado por cadastrar', message: 'O jogo foi cadastrado com sucesso.' }))
                         // ON ERROR => RESPONSE BAD REQUEST 400
                         .catch(err => res.status(400).json({ message: err.message }))
                         // DISCONNECTING TO THE DATABASE
