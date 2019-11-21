@@ -122,7 +122,7 @@
                     case 'Boardgame':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#546EFD;">swap_calls</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#546EFD;">extension</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
@@ -133,7 +133,7 @@
                     case 'Cardgame':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#FF9800;">swap_calls</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#FF9800;">view_carousel</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
@@ -144,7 +144,7 @@
                     case 'Outro':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#424242;">swap_calls</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#424242;">gamepad</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
