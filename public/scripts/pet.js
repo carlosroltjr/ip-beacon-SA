@@ -112,7 +112,7 @@
         appShowDialog({
             element: dialog,
             title: 'Ajuda',
-            message: 'Favor verificar as informações do animal e se você for ajudar o mesmo, favor clicar no ícone de coração RESGATAR. Por favor só realize está operação se você realmente for ajudar o animal, pois ao fazer isso o mesmo será removido do banco de dados.',
+            message: 'Dados de um jogo, caso queira excluir basta clicar na lixeira ao lado',
             btn_ok() { appHideDialog(dialog); }
         });
     });
