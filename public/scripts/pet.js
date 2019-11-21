@@ -128,8 +128,8 @@
         if (navigator.onLine) {
             appShowDialog({
                 element: dialog,
-                title: 'Resgate',
-                message: 'Por favor prossiga clicando em SIM para informar que você vai resgatar este animal. Realize esta operação somente se você realmente for resgatar o animal, pois ao fazer esta operação, o animal será removido do banco de dados impossibilitando que outras pessoas consigam ajudá-lo.',
+                title: 'Apagar',
+                message: 'Realmente deseja apagar?',
                 btn_no() { appHideDialog(dialog); },
                 btn_yes() {
                     let str_auth = localStorage.getItem('auth'),
