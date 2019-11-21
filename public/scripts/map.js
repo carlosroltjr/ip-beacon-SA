@@ -119,10 +119,10 @@
             data.map(item => {
                 let pet_date = item.date.substr(0, item.date.length - 14).split('-');
                 switch (item.type) {
-                    case 'Gato':
+                    case 'Boardgame':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#546EFD;">pets</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#546EFD;">swap_calls</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
@@ -130,10 +130,10 @@
                         </span>
                         </li>`;
                         break;
-                    case 'Cachorro':
+                    case 'Cardgame':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#FF9800;">pets</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#FF9800;">swap_calls</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
@@ -144,7 +144,7 @@
                     case 'Outro':
                         template += `<li class="mdl-list__item mdl-list__item--two-line" id="${item.petId}">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon" style="color:#424242;">pets</i>
+                            <i class="material-icons mdl-list__item-icon" style="color:#424242;">swap_calls</i>
                             <span>${item.nickname}</span>
                             <span class="mdl-list__item-sub-title">
                               ${item.type} - ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}
