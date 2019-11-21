@@ -527,15 +527,15 @@
 
                 div_filter.children[0].children[1].children[5].children[0].addEventListener('click', () => {
                     let dist = div_filter.children[0].children[1].children[5].children[1];
-                    if (parseInt(dist.innerHTML) >= 100 && parseInt(dist.innerHTML) < 1500) {
-                        dist.innerHTML = parseInt(dist.innerHTML) + 50;
+                    if (parseInt(dist.innerHTML) >= 1000 && parseInt(dist.innerHTML) < 15000) {
+                        dist.innerHTML = parseInt(dist.innerHTML) + 500;
                     }
                 });
 
                 div_filter.children[0].children[1].children[5].children[2].addEventListener('click', () => {
                     let dist = div_filter.children[0].children[1].children[5].children[1];
-                    if (parseInt(dist.innerHTML) > 100 && parseInt(dist.innerHTML) <= 1500) {
-                        dist.innerHTML = parseInt(dist.innerHTML) - 50;
+                    if (parseInt(dist.innerHTML) > 1000 && parseInt(dist.innerHTML) <= 15000) {
+                        dist.innerHTML = parseInt(dist.innerHTML) - 500;
                     }
                 });
             }
