@@ -136,10 +136,10 @@ module.exports = () => {
                                 .then(result => {
                                     // E-MAIL OPTIONS
                                     let mailOptions = {
-                                        from: 'app.petresgate@gmail.com',
+                                        from: 'ip.beacon.sa@gmail.com',
                                         to: jsonData.email,
-                                        subject: 'PET RESGATE - Recuperação de Cadastro',
-                                        text: `Esta é uma mensagem automática por favor não responda.\n\nVocê solicitou uma recuperação de cadastro para o app PET RESGATE. Os dados cadastrados para este e-mail são:\n\nNome de usuário: ${result.rows[0].user_name}\nSenha: ${new_password}\n\nAtenciosamente,\nPET RESGATE`
+                                        subject: 'Interplanar Beacon - Recuperação de Cadastro',
+                                        text: `Esta é uma mensagem automática por favor não responda.\n\nVocê solicitou uma recuperação de cadastro para o app Interplanar Beacon. Os dados cadastrados para este e-mail são:\n\nNome de usuário: ${result.rows[0].user_name}\nSenha: ${new_password}\n\nAtenciosamente,\nInterplanar Beacon`
                                     };
                                     // E-MAIL FUNCTION
                                     transporter.sendMail(mailOptions, error => {
@@ -370,7 +370,7 @@ module.exports = () => {
                         // ON SUCCESS
                         .then(() => {
                             // RESPONSE OK 200
-                            res.status(200).json({ title: 'Resgate', message: 'O resgate do animal foi registrado com sucesso, muito obrigado por ajudar.' })
+                            res.status(200).json({ title: 'Exclusão', message: 'Jogo excluido com sucesso.' })
                         })
                         // ON ERROR => RESPONSE BAD REQUEST 400
                         .catch(err => res.status(400).json({ message: err.message }))
