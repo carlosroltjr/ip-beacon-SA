@@ -166,7 +166,7 @@
                         },
                             str_pet = JSON.stringify(obj_pet);
                         localStorage.setItem('pet', str_pet);
-                        window.location = 'pet.html';
+                        window.location = 'game.html';
                     }
                     else {
                         appShowSnackBar(snackbar, 'Sem internet');

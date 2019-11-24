@@ -9,7 +9,7 @@ self.addEventListener('install', function (event) {
     var urlsToPrefetch = [
         'index.html',
         'map.html',
-        'pet.html',
+        'game.html',
         'profile.html',
         'recover.html',
         'register.html',
