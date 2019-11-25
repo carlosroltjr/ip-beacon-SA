@@ -301,6 +301,7 @@ module.exports = () => {
                         // ON SUCCESS
                         .then(result => {
                             respTemplate = {
+                                user: result.rows[0].user_id,
                                 petId: result.rows[0].pet_id,
                                 nickname: result.rows[0].pet_nickname.trim(),
                                 type: result.rows[0].pet_type.trim(),

@@ -57,6 +57,10 @@
                     })
                         .then(result => { return result.json() })
                         .then(data => {
+                            fetch(`/data/${data.respTemplate.user}`)
+                                .then(usuario => {
+                                    console.log(usuario);
+                                });
                             // DATA ARRAYBUFFER TO BASE 64 STRING
                             let base64String = String.fromCharCode.apply(null, new Uint16Array(data.respTemplate.picture.data)),
                                 pet_date = data.respTemplate.date.substr(0, data.respTemplate.date.length - 14).split('-'),
