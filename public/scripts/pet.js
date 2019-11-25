@@ -57,7 +57,12 @@
                     })
                         .then(result => { return result.json() })
                         .then(data => {
-                            fetch(`/data/${data.respTemplate.user}`)
+                            fetch(`/data/${data.respTemplate.user}`, {
+                                method: 'GET',
+                                headers: {
+                                    'Authorization': `Bearer ${obj_auth.token}`
+                                }
+                            })
                                 .then(usuario => {
                                     console.log(usuario);
                                 });
