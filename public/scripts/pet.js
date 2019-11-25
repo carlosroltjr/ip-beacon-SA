@@ -57,6 +57,7 @@
                     })
                         .then(result => { return result.json() })
                         .then(data => {
+                            console.log(data.respTemplate.user);
                             fetch(`/data/${data.respTemplate.user}`, {
                                 method: 'GET',
                                 headers: {
