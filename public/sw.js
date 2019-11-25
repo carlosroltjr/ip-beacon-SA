@@ -24,7 +24,7 @@ self.addEventListener('install', function (event) {
         'scripts/pet.js',
         'scripts/profile.js',
         'scripts/recover.js',
-        'scrip
+        'scripts/register.js'
     ];
 
 
