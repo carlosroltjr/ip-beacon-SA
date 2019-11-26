@@ -57,46 +57,48 @@
                     })
                         .then(result => { return result.json() })
                         .then(data => {
-                            console.log(data.respTemplate.user);
+                            console.log(11);
                             fetch(`/data/${data.respTemplate.user}`, {
                                 method: 'GET',
                                 headers: {
                                     'Authorization': `Bearer ${obj_auth.token}`
                                 }
                             })
-                                .then(usuario => {
-                                    console.log(usuario);
-                                });
-                            // DATA ARRAYBUFFER TO BASE 64 STRING
-                            let base64String = String.fromCharCode.apply(null, new Uint16Array(data.respTemplate.picture.data)),
-                                pet_date = data.respTemplate.date.substr(0, data.respTemplate.date.length - 14).split('-'),
-                                template = null,
-                                // CREATES A IMAGE
-                                img = new Image();
-                            img.src = base64String;
-                            // RESIZE THE IMAGE
-                            img.onload = () => {
-                                ctx.clearRect(0, 0, can_width, can_height);
-                                com_canvas.width = can_width;
-                                com_canvas.height = can_height;
-                                // DRAW THE IMAGE ON CANVAS
-                                ctx.drawImage(img, 0, 0, can_width, can_height);
-                            },
-                                img.onerror = err => console.error(err.message);
+                                .then(result1 => { return result1.json() })
+                                .then(data1 => {
+                                    // DATA ARRAYBUFFER TO BASE 64 STRING
+                                    let base64String = String.fromCharCode.apply(null, new Uint16Array(data.respTemplate.picture.data)),
+                                        pet_date = data.respTemplate.date.substr(0, data.respTemplate.date.length - 14).split('-'),
+                                        template = null,
+                                        // CREATES A IMAGE
+                                        img = new Image();
+                                    img.src = base64String;
+                                    // RESIZE THE IMAGE
+                                    img.onload = () => {
+                                        ctx.clearRect(0, 0, can_width, can_height);
+                                        com_canvas.width = can_width;
+                                        com_canvas.height = can_height;
+                                        // DRAW THE IMAGE ON CANVAS
+                                        ctx.drawImage(img, 0, 0, can_width, can_height);
+                                    },
+                                        img.onerror = err => console.error(err.message);
 
-                            template = `Nome: ${data.respTemplate.nickname}<br><br>
-                            Tipo: ${data.respTemplate.type}<br><br>
-                            Número de jogadores: ${data.respTemplate.color}<br><br>
-                            Data de Cadastro:  ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}<br><br>
-                            Semanal? ${data.respTemplate.injured ? 'Sim' : 'Não'}<br><br>
-                            Cooperativo? ${data.respTemplate.sick ? 'Sim' : 'Não'}<br><br>
-                            Bom para iniciantes? ${data.respTemplate.fed ? 'Sim' : 'Não'}<br><br>
-                            Localização: ${data.respTemplate.address}<br>${data.respTemplate.coordinates}<br><br>
-                            Descrição: ${data.respTemplate.description}`;
+                                    template = `Nome: ${data.respTemplate.nickname}<br><br>
+                                    Usuário: ${data1.respTemplate.name}<br><br>
+                                    Email: ${data1.respTemplate.email}<br><br>
+                        Tipo: ${data.respTemplate.type}<br><br>
+                        Número de jogadores: ${data.respTemplate.color}<br><br>
+                        Data de Cadastro:  ${pet_date[2]}-${pet_date[1]}-${pet_date[0]}<br><br>
+                        Semanal? ${data.respTemplate.injured ? 'Sim' : 'Não'}<br><br>
+                        Cooperativo? ${data.respTemplate.sick ? 'Sim' : 'Não'}<br><br>
+                        Bom para iniciantes? ${data.respTemplate.fed ? 'Sim' : 'Não'}<br><br>
+                        Localização: ${data.respTemplate.address}<br>${data.respTemplate.coordinates}<br><br>
+                        Descrição: ${data.respTemplate.description}`;
 
-                            pet_description.innerHTML = template;
-                            appHideLoading(spinner, spinner.children[0]);
+                                    pet_description.innerHTML = template;
+                                    appHideLoading(spinner, spinner.children[0]);
 
+                                })
                         })
                         .catch(err => {
                             console.error(err.message);
